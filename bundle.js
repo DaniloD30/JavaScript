@@ -1,224 +1,113 @@
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./main.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./funcoes.js":
+/*!********************!*\
+  !*** ./funcoes.js ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.soma = soma;\n\nfunction soma(a, b) {\n  return a + b;\n}\n\n//# sourceURL=webpack:///./funcoes.js?");
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+/***/ }),
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+/***/ "./main.js":
+/*!*****************!*\
+  !*** ./main.js ***!
+  \*****************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+"use strict";
+eval("\n\nvar _funcoes = __webpack_require__(/*! ./funcoes */ \"./funcoes.js\");\n\nconsole.log((0, _funcoes.soma)(1, 2)); // class Usuario{\n//     costructor(email, senha){\n//         this.email = email;\n//         this.senha = senha;\n//         this.admin = false;\n//     }\n//     isAdmin(){\n//         if(this.admin == true){\n//             return \"Adm\";\n//         }\n//         else{\n//             return \"Nao eh adm\";\n//         }\n//     }\n// }\n// //Para testar seus conhecimentos com classes, crie uma classe com nome \"Admin\", essa classe deve\n// //extender uma segunda classe chamada \"Usuario\".\n// /*A classe usuário deve receber dois parâmetros no método construtor, e-mail e senha, e anotá-los\n// em propriedades da classe. \n// A classe \"Admin\" por sua vez não recebe parâmetros mas deve repassar os parâmetros de e-mail e senha à classe pai e marcar uma propriedade \"admin\" como\n// true na classe.\n// Agora com suas classes formatadas, adicione um método na classe Usuario chamado isAdmin que\n// retorna se o usuário é administrador ou não baseado na propriedade admin ser true ou não.*/\n// class Admin extends Usuario {\n//     constructor(email, senha){\n//         super(email, senha);\n//         this.admin = true;\n//     }\n// }\n// const usuarios = [\n//     { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },\n//     { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },\n//     { nome: 'Lucas', idade: 30, empresa: 'Google' },\n//    ];\n//    //Crie uma variável que contenha todas idades dos usuários: [23, 15, 30]\n// var roots = usuarios.map(function (item, index){return usuarios[index].idade});\n// //Crie uma variáveis que tenha apenas os usuários que trabalham na Rocketseat e com mais de 18\n// //anos: [{ nome: 'Diego', idade: 23, empresa: 'Rocketseat' }]\n// var  roots = usuarios.filter((maioridade) => {\n//     return (maioridade.idade > 17);\n//   });\n//   // Crie uma variável que procura por um usuário que trabalhe na empresa Google: undefined\n//   roots = usuarios.find( x => x.empresa === 'Google');\n//  roots = usuarios.map((item, index) => (usuarios[index].idade * 2)).filter((maioridade) => {\n//     return (maioridade < 50);\n//   });\n// //console.log(roots);\n// //var teste = usuarios.filter((maioridade) => {\n//   //  return (maioridade.idade <= 50);\n//   //});\n// //console.log(roots);\n// const User1 = new Usuario('email@teste.com', 'senha123');\n// const Adm1 = new Admin('email@teste.com', 'senha123');\n// //console.log(User1.isAdmin()) // false\n// //console.log(Adm1.isAdmin()) // true\n// /* ARROW FUNCTION _________________________________________________________ */\n// // 3.1\n// const arr = [1, 2, 3, 4, 5];\n// var x = arr.map(function(item) {\n//  return item + 10;\n// });\n// //console.log(x);\n// arr.map(item => item+10);\n// //console.log(x);\n// // 3.2\n// // Dica: Utilize uma constante pra function\n// const usuario = { nome: 'Diego', idade: 23 };\n// function mostraIdade(usuario) {\n//  return usuario.idade;\n// }\n// //console.log(mostraIdade(usuario));\n// const mostraIdadee = (usuario) => { return usuario.idade };\n// //console.log(mostraIdadee(usuario));\n// // 3.3\n// // Dica: Utilize uma constante pra function\n// const nome = \"Diego\";\n// const idade = 23;\n// function mostraUsuario(nome = 'Diego', idade = 18) {\n//  return { nome, idade };\n// }\n// // console.log(mostraUsuario(nome, idade));\n// // console.log(mostraUsuario(nome));\n// const mostraUsuarioo = (nome = 'Diego', idade = 18) => { return {nome , idade} };\n// // console.log(mostraUsuarioo(nome, idade));\n// // console.log(mostraUsuarioo(nome));\n// // 3.4\n// const promise = function() {\n//  return new Promise(function(resolve, reject) {\n//  return resolve();\n//  })\n// }\n// //console.log(promise);  \n// const promisee = () => { return Promise = (resolve, reject) => { {return resolve()}}};\n// //console.log(promisee);  \n// // 4\n// var empresa = {\n//     nome: 'Rocketseat',\n//     endereco: {\n//     cidade: 'Rio do Sul',\n//     estado: 'SC',\n//     }\n//    };\n// var { nome: x, endereco: {cidade: y, estado: z} } = empresa;\n// // console.log(x);\n// // console.log(y);\n// // console.log(z);\n// // 4.2\n// function mostraInfo({nome: nome, idade: idade}) {\n//     return `${nome} tem ${idade} anos.`;\n//    }\n// //    console.log(mostraInfo({ nome: 'Diego', idade: 23 }));\n//    //return `${nome} tem ${idade} anos.`;usuarios\n// //    Exercicio 6 ___________________\n// var usuarioo = 'Diego';\n// var idadee = '23';\n// // console.log(`O usuário ${usuarioo} possui ${idade} anos`);\n// const nomee = 'Diego';\n// const idadeee = 23;\n// const usuariooo = {\n//  nomee,\n//  idadeee,\n//  cidade: 'Rio do Sul',\n// };\n// console.log(usuariooo);\n\n//# sourceURL=webpack:///./main.js?");
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+/***/ })
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Usuario =
-/*#__PURE__*/
-function () {
-  function Usuario() {
-    _classCallCheck(this, Usuario);
-  }
-
-  _createClass(Usuario, [{
-    key: "costructor",
-    value: function costructor(email, senha) {
-      this.email = email;
-      this.senha = senha;
-      this.admin = false;
-    }
-  }, {
-    key: "isAdmin",
-    value: function isAdmin() {
-      if (this.admin == true) {
-        return "Adm";
-      } else {
-        return "Nao eh adm";
-      }
-    }
-  }]);
-
-  return Usuario;
-}(); //Para testar seus conhecimentos com classes, crie uma classe com nome "Admin", essa classe deve
-//extender uma segunda classe chamada "Usuario".
-
-/*A classe usuário deve receber dois parâmetros no método construtor, e-mail e senha, e anotá-los
-em propriedades da classe. 
-A classe "Admin" por sua vez não recebe parâmetros mas deve repassar os parâmetros de e-mail e senha à classe pai e marcar uma propriedade "admin" como
-true na classe.
-Agora com suas classes formatadas, adicione um método na classe Usuario chamado isAdmin que
-retorna se o usuário é administrador ou não baseado na propriedade admin ser true ou não.*/
-
-
-var Admin =
-/*#__PURE__*/
-function (_Usuario) {
-  _inherits(Admin, _Usuario);
-
-  function Admin(email, senha) {
-    var _this;
-
-    _classCallCheck(this, Admin);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Admin).call(this, email, senha));
-    _this.admin = true;
-    return _this;
-  }
-
-  return Admin;
-}(Usuario);
-
-var usuarios = [{
-  nome: 'Diego',
-  idade: 23,
-  empresa: 'Rocketseat'
-}, {
-  nome: 'Gabriel',
-  idade: 15,
-  empresa: 'Rocketseat'
-}, {
-  nome: 'Lucas',
-  idade: 30,
-  empresa: 'Google'
-}]; //Crie uma variável que contenha todas idades dos usuários: [23, 15, 30]
-
-var roots = usuarios.map(function (item, index) {
-  return usuarios[index].idade;
-}); //Crie uma variáveis que tenha apenas os usuários que trabalham na Rocketseat e com mais de 18
-//anos: [{ nome: 'Diego', idade: 23, empresa: 'Rocketseat' }]
-
-var roots = usuarios.filter(function (maioridade) {
-  return maioridade.idade > 17;
-}); // Crie uma variável que procura por um usuário que trabalhe na empresa Google: undefined
-
-roots = usuarios.find(function (x) {
-  return x.empresa === 'Google';
-});
-roots = usuarios.map(function (item, index) {
-  return usuarios[index].idade * 2;
-}).filter(function (maioridade) {
-  return maioridade < 50;
-}); //console.log(roots);
-//var teste = usuarios.filter((maioridade) => {
-//  return (maioridade.idade <= 50);
-//});
-//console.log(roots);
-
-var User1 = new Usuario('email@teste.com', 'senha123');
-var Adm1 = new Admin('email@teste.com', 'senha123'); //console.log(User1.isAdmin()) // false
-//console.log(Adm1.isAdmin()) // true
-
-/* ARROW FUNCTION _________________________________________________________ */
-// 3.1
-
-var arr = [1, 2, 3, 4, 5];
-var x = arr.map(function (item) {
-  return item + 10;
-}); //console.log(x);
-
-arr.map(function (item) {
-  return item + 10;
-}); //console.log(x);
-// 3.2
-// Dica: Utilize uma constante pra function
-
-var usuario = {
-  nome: 'Diego',
-  idade: 23
-};
-
-function mostraIdade(usuario) {
-  return usuario.idade;
-} //console.log(mostraIdade(usuario));
-
-
-var mostraIdadee = function mostraIdadee(usuario) {
-  return usuario.idade;
-}; //console.log(mostraIdadee(usuario));
-// 3.3
-// Dica: Utilize uma constante pra function
-
-
-var nome = "Diego";
-var idade = 23;
-
-function mostraUsuario() {
-  var nome = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Diego';
-  var idade = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 18;
-  return {
-    nome: nome,
-    idade: idade
-  };
-} // console.log(mostraUsuario(nome, idade));
-// console.log(mostraUsuario(nome));
-
-
-var mostraUsuarioo = function mostraUsuarioo() {
-  var nome = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Diego';
-  var idade = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 18;
-  return {
-    nome: nome,
-    idade: idade
-  };
-}; // console.log(mostraUsuarioo(nome, idade));
-// console.log(mostraUsuarioo(nome));
-// 3.4
-
-
-var promise = function promise() {
-  return new Promise(function (resolve, reject) {
-    return resolve();
-  });
-}; //console.log(promise);  
-
-
-var promisee = function promisee() {
-  return Promise = function Promise(resolve, reject) {
-    {
-      return resolve();
-    }
-  };
-}; //console.log(promisee);  
-// 4
-
-
-var empresa = {
-  nome: 'Rocketseat',
-  endereco: {
-    cidade: 'Rio do Sul',
-    estado: 'SC'
-  }
-};
-var x = empresa.nome,
-    _empresa$endereco = empresa.endereco,
-    y = _empresa$endereco.cidade,
-    z = _empresa$endereco.estado; // console.log(x);
-// console.log(y);
-// console.log(z);
-// 4.2
-
-function mostraInfo(_ref) {
-  var nome = _ref.nome,
-      idade = _ref.idade;
-  return "".concat(nome, " tem ").concat(idade, " anos.");
-} //    console.log(mostraInfo({ nome: 'Diego', idade: 23 }));
-//return `${nome} tem ${idade} anos.`;usuarios
-//    Exercicio 6 ___________________
-
-
-var usuarioo = 'Diego';
-var idadee = '23'; // console.log(`O usuário ${usuarioo} possui ${idade} anos`);
-
-var nomee = 'Diego';
-var idadeee = 23;
-var usuariooo = {
-  nomee: nomee,
-  idadeee: idadeee,
-  cidade: 'Rio do Sul'
-};
-console.log(usuariooo);
+/******/ });
