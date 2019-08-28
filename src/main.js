@@ -1,5 +1,102 @@
-import {soma} from './funcoes'
-console.log(soma(1,2));
+import ClasseUsuario, {idade as IdadeUsuario} from "./functions";
+// console.log(IdadeUsuario);
+// ClasseUsuario.info();
+
+// _________________________________________________________
+// ________________________________________________________
+const delay = () => new Promise(resolve => 
+    setTimeout(() => { resolve('OK')
+    }, 1000));
+
+function umPorSegundo() {
+    delay().then(() => {
+    console.log('1s');
+    delay().then(() => {
+    console.log('2s');
+    delay().then(() => {
+    console.log('3s');
+    });
+ })
+ });
+}
+
+
+async function executar(){
+    const response = await delay();
+    console.log(response);
+}
+// executar();
+
+// _________________________________________________________
+// ________________________________________________________
+import axios from 'axios';
+async function getUserFromGithub(user) {
+    try {
+         const response = await axios.get(`https://api.github.com/users/${user}`);
+         console.log(response);
+           
+    } catch (error) {
+        console.warn('Erro na API');
+    }
+ 
+}
+// getUserFromGithub('diego3g');
+// getUserFromGithub('diego3g124123');
+// getUserFromGithub('danilod30');
+
+// _________________________________________________________
+// ________________________________________________________
+
+class Github {
+    static async getRepositories(repo) {
+        try {
+            const response = await axios.get(`https://api.github.com/repos/${repo}`);
+            console.log(response);
+        } catch (error) {
+            console.warn('Erro na API');
+        }
+    }
+   }
+
+// Github.getRepositories('rocketseat/rocketseat.com.br');
+// Github.getRepositories('rocketseat/dslkvmskv');
+// Github.getRepositories('DaniloD30/QuickBuyPg');
+
+// _________________________________________________________
+// ________________________________________________________
+
+ const buscaUsuario = async usuario => {
+        try {
+            const response = await axios.get(`https://api.github.com/users/${usuario}`);
+            console.log(response);
+        } catch (error) {
+            console.log('Usuário não existe');
+        }
+    }
+
+//    buscaUsuario('danilod30');
+
+// _________________________________________________________
+// ________________________________________________________
+
+// Em seu arquivo principal importe tanto a classe quanto a variável idade e renomeie a variável idade
+// para IdadeUsuario.
+
+// import defaultExport from "module-name";
+// import * as name from "module-name";
+// import { export } from "module-name";
+// import { export as alias } from "module-name";
+// import { export1 , export2 } from "module-name";
+// import { foo , bar } from "module-name/path/to/specific/un-exported/file";
+// import { export1 , export2 as alias2 , [...] } from "module-name";
+// import defaultExport, { export [ , [...] ] } from "module-name"; 
+// import defaultExport, * as name from "module-name"; 
+// import "module-name"; var promise = import("module-name"); // This is a stage 3 proposal.   
+// import defaultExport from "module-name";
+// ClasseUsuario.info();
+//   import {myExport} from '/modules/my-module.js';
+
+alert('Opa');
 
 // class Usuario{
 //     costructor(email, senha){
